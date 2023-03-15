@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quran_app/widgets/card.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -7,9 +8,15 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.white,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              CustomCard(surahName: "An-Nasr", cardContent: "verse goes here...",),
+
+            ],
+          ),
+        ),
       ),
     );
   }
