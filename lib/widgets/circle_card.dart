@@ -5,8 +5,9 @@ import 'package:quran_app/pages/quran_page.dart';
 class CircleCard extends StatelessWidget {
   final dynamic customIcon;
   final dynamic text;
+  final  Widget route;
 
-  const CircleCard({super.key, required this.customIcon, this.text});
+  const CircleCard({super.key, required this.customIcon, this.text, required this.route});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class CircleCard extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => QuranPage()
+            builder: (context) => route
           ),
         );
       },

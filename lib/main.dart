@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quran_app/pages/main_page.dart';
 import 'package:quran_app/pages/tasbih_page.dart';
 
 void main() {
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
       theme: ThemeData(
@@ -43,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         body:
-            const TasbihPage() // This trailing comma makes auto-formatting nicer for build methods.
+            const MainPage() // This trailing comma makes auto-formatting nicer for build methods.
         );
   }
 }

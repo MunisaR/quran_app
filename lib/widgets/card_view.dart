@@ -23,6 +23,7 @@ class CardView extends StatelessWidget {
             return CircleCard(
               customIcon: categories[index]['picture'],
               text: categories[index]['name'],
+              route: categories[index]['route'] as Widget,
             );
           },
         ));
