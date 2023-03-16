@@ -1,6 +1,7 @@
 import 'package:quran_app/pages/99_names.dart';
 import 'package:quran_app/pages/quran_page.dart';
 import 'package:quran_app/pages/tasbih_page.dart';
+import 'package:quran_app/pages/zikrs.dart';
 
 const route_categories = [
   {
@@ -49,7 +50,7 @@ const route_categories = [
     "id": 7,
     "name": "Zikr\nva\nduolar",
     "picture": "assets/icons/zikr.png",
-    "route": QuranPage()
+    "route": Zikrs()
 
   },
   {
