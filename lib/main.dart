@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quran_app/DRY/colors.dart';
-import 'package:quran_app/pages/main_page.dart';
-import 'package:quran_app/DRY/colors.dart';
+import 'package:quran_app/pages/tasbih_page.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -15,12 +14,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      theme: ThemeData(
+        fontFamily: 'Nunito',
+      ),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
+
   final String title;
 
   @override
@@ -28,19 +31,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        shadowColor: Colors.transparent,
-        title: Text("Quran", style: TextStyle(
-          color: Colors.black
-        ),),
-      ),
-      body:const MainPage()// This trailing comma makes auto-formatting nicer for build methods.
-    );
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          shadowColor: Colors.transparent,
+          title: Text(
+            "Quran",
+            style: TextStyle(color: Colors.black),
+          ),
+        ),
+        body:
+            const TasbihPage() // This trailing comma makes auto-formatting nicer for build methods.
+        );
   }
 }
