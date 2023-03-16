@@ -26,7 +26,7 @@ class CircleCard extends StatelessWidget {
                 decoration: BoxDecoration(
                     // The child of a round Card should be in round shape
                     shape: BoxShape.circle,
-                    color: Colors.red),
+                    color: custom_grey),
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Image.asset(
@@ -34,12 +34,15 @@ class CircleCard extends StatelessWidget {
                     width: 30,
                   ),
                 ))),
+        const SizedBox(
+          height: 4,
+        ),
         Text(
           text,
           textAlign: TextAlign.center,
           overflow: TextOverflow.fade,
-          style: new TextStyle(
-            fontSize: 10.0,
+          style: TextStyle(
+            fontSize: 12.0,
             fontFamily: 'Roboto',
             color: new Color(0xFF212121),
             fontWeight: FontWeight.bold,
