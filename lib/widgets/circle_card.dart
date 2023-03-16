@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/DRY/colors.dart';
+import 'package:quran_app/pages/quran_page.dart';
 
 class CircleCard extends StatelessWidget {
   final dynamic customIcon;
@@ -15,7 +16,7 @@ class CircleCard extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) =>
+            builder: (context) => QuranPage()
           ),
         );
       },
