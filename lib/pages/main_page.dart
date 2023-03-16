@@ -23,6 +23,9 @@ class MainPage extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(
+              height: 35,
+            ),
             SingleChildScrollView(scrollDirection: Axis.vertical,
                child: CardView()
             )
