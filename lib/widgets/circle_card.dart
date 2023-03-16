@@ -9,31 +9,34 @@ class CircleCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // print(MediaQuery.of(context).size.width);
     return Column(
+
       children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Card(
-              elevation: 20,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(150),
-              ),
-              child: Container(
-                  width: 100,
-                  height: 100,
-                  decoration: BoxDecoration(
-                      // The child of a round Card should be in round shape
-                      shape: BoxShape.circle,
-                      color: custom_grey),
-                  child: Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Image.asset(
-                      customIcon,
-                    ),
-                  ))),
-        ),
+        Card(
+            elevation: 20,
+
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(150),
+            ),
+            child: Container(
+              // color: Colors.red,
+                width: MediaQuery.of(context).size.width <= 375 ? 120 : 81,
+                height:  MediaQuery.of(context).size.width <= 375 ? 120 : 81,
+                decoration: BoxDecoration(
+                    // The child of a round Card should be in round shape
+                    shape: BoxShape.circle,
+                    color: Colors.red),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Image.asset(
+                    customIcon,
+                    width: 30,
+                  ),
+                ))),
         Text(
           text,
+          textAlign: TextAlign.center,
           overflow: TextOverflow.fade,
           style: new TextStyle(
             fontSize: 10.0,

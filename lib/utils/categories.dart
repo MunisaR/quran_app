@@ -6,7 +6,7 @@ const route_categories = [
   },
   {
     "id": 2,
-    "name": "Namoz vaqtlari",
+    "name": "Namoz\nvaqtlari",
     "picture": "assets/icons/namoz.png",
   },
   {
@@ -21,23 +21,23 @@ const route_categories = [
   },
   {
     "id": 5,
-    "name": "Allohning 99 ismlari",
+    "name": "Allohning\n99\nismlari",
     "picture": "assets/icons/99.png",
   },
   {
     "id": 6,
-    "name": "Namoz o'qishni o'rganamiz",
+    "name": "Namoz\no'qishni\no'rganamiz",
     "picture": "assets/icons/praying.png",
   },
   ////
   {
     "id": 7,
-    "name": "Zikr va duolar",
+    "name": "Zikr\nva\nduolar",
     "picture": "assets/icons/zikr.png",
   },
   {
     "id": 8,
-    "name": "Savol va javob",
+    "name": "Savol\nva\njavob",
     "picture": "assets/icons/brain.png",
   },
   {

@@ -8,22 +8,23 @@ class CardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var categories = route_categories;
+    // print(MediaQuery.of(context).size.height);
     return Container(
-      height: 470,
-      width: 430,
-      child: GridView.builder(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
-          crossAxisSpacing: 3.0,
-          mainAxisSpacing: 15.0,
-        ),
-        itemCount: categories.length,
-        itemBuilder: (context, index) {
-          return CircleCard(customIcon: categories[index]['picture'], text:categories[index]['name'] ,);
-        },
-      )
-    );
-
-
+        height: MediaQuery.of(context).size.height <= 670 ? 460: 470,
+        width: 430,
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: MediaQuery.of(context).size.width <= 375 ? 2 : 3,
+            crossAxisSpacing: 3.0,
+            mainAxisSpacing: 3.0,
+          ),
+          itemCount: categories.length,
+          itemBuilder: (context, index) {
+            return CircleCard(
+              customIcon: categories[index]['picture'],
+              text: categories[index]['name'],
+            );
+          },
+        ));
   }
 }
