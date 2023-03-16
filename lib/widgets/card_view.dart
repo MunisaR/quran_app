@@ -8,20 +8,22 @@ class CardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var categories = route_categories;
-    return GridView.builder(
-      physics: const NeverScrollableScrollPhysics(),
-      shrinkWrap: true,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
-        crossAxisSpacing: 3.0,
-        mainAxisSpacing: 15.0,
-      ),
-      itemCount: categories.length,
-      itemBuilder: (context, index) {
-        return CircleCard(customIcon: categories[index]['picture'], text:categories[index]['name'] ,);
-      },
+    return Container(
+      height: 470,
+      width: 430,
+      child: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          crossAxisSpacing: 3.0,
+          mainAxisSpacing: 15.0,
+        ),
+        itemCount: categories.length,
+        itemBuilder: (context, index) {
+          return CircleCard(customIcon: categories[index]['picture'], text:categories[index]['name'] ,);
+        },
+      )
     );
-    ////
+
 
   }
 }

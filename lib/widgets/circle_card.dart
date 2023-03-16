@@ -36,7 +36,7 @@ class CircleCard extends StatelessWidget {
           text,
           overflow: TextOverflow.fade,
           style: new TextStyle(
-            fontSize: 9.0,
+            fontSize: 10.0,
             fontFamily: 'Roboto',
             color: new Color(0xFF212121),
             fontWeight: FontWeight.bold,
