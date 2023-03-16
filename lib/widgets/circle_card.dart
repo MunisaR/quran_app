@@ -23,7 +23,7 @@ class CircleCard extends StatelessWidget {
               // color: Colors.red,
                 width: MediaQuery.of(context).size.width <= 375 ? 120 : 81,
                 height:  MediaQuery.of(context).size.width <= 375 ? 120 : 81,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     // The child of a round Card should be in round shape
                     shape: BoxShape.circle,
                     color: Colors.red),
@@ -38,10 +38,10 @@ class CircleCard extends StatelessWidget {
           text,
           textAlign: TextAlign.center,
           overflow: TextOverflow.fade,
-          style: new TextStyle(
+          style: const TextStyle(
             fontSize: 10.0,
             fontFamily: 'Roboto',
-            color: new Color(0xFF212121),
+            color: Color(0xFF212121),
             fontWeight: FontWeight.bold,
           ),
         )
