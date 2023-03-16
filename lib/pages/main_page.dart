@@ -9,23 +9,26 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Column(
-        children: [
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: const [
-                CustomCard(surahName: "An-Nasr", cardContent: "verse goes here...",),
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: SafeArea(
+        child: Column(
+          children: [
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: const [
+                  CustomCard(surahName: "An-Nasr", cardContent: "1. (Эй Муҳаммад алайҳис-салоту вас-салом), айтинг: «У — Аллоҳ Бирдир. (Яъни, Унинг ҳеч қандай шериги йўқдир. У яккаю ёлғиздир).",),
 
-              ],
+                ],
+              ),
             ),
-          ),
-          SingleChildScrollView(scrollDirection: Axis.vertical,
-             child: CardView()
-          )
+            SingleChildScrollView(scrollDirection: Axis.vertical,
+               child: CardView()
+            )
 
-        ],
+          ],
+        ),
       ),
     );
   }
