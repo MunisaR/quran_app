@@ -1,12 +1,10 @@
 import 'package:quran_app/pages/99_names.dart';
-import 'package:quran_app/pages/quizz/hajj/hajj_quizz_page.dart';
-import 'package:quran_app/pages/quizz/praying/praying_quizz_page.dart';
-import 'package:quran_app/pages/quizz/prophets/prophets_quizz_page.dart';
-import 'package:quran_app/pages/quizz/ramadan/ramadan_quizz_page.dart';
 import 'package:quran_app/pages/quran_page.dart';
+import 'package:quran_app/pages/rayingMainPage.dart';
 import 'package:quran_app/pages/tasbih_page.dart';
 import 'package:quran_app/widgets/quiz_card.dart';
 import "../pages/quizz/qur'an/quran_quizz_page.dart";
+import 'package:quran_app/pages/zikrs.dart';
 
 const routeCategories = [
   {
@@ -33,7 +31,7 @@ const routeCategories = [
     "id": 4,
     "name": "Qibla",
     "picture": "assets/icons/kaaba.png",
-    "route": QuranPage()
+    "route": TasbihPage()
 
   },
   {
@@ -47,7 +45,7 @@ const routeCategories = [
     "id": 6,
     "name": "Namoz\no'qishni\no'rganamiz",
     "picture": "assets/icons/praying.png",
-    "route": QuranPage()
+    "route": PrayingMainPage()
 
   },
   ////
@@ -55,7 +53,7 @@ const routeCategories = [
     "id": 7,
     "name": "Zikr\nva\nduolar",
     "picture": "assets/icons/zikr.png",
-    "route": QuranPage()
+    "route": Zikrs()
 
   },
   {
