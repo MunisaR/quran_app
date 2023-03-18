@@ -74,7 +74,7 @@ class _QuranPageState extends State<QuranPage> {
                 itemBuilder: (BuildContext context, int i) {
                   return Column(
                     children: [
-                      Divider(
+                      const Divider(
                         color: Colors.grey,
                         thickness: 1,
                         height: 1,

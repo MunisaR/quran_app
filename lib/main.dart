@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quran_app/DRY/colors.dart';
 import 'package:quran_app/pages/main_page.dart';
 import 'package:quran_app/pages/tasbih_page.dart';
 
@@ -37,11 +38,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: primaryBg,
           shadowColor: Colors.transparent,
           title: Text(
             "Quran",
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: Colors.white),
+
           ),
         ),
         body:

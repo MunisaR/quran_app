@@ -1,8 +1,14 @@
 import 'package:quran_app/pages/99_names.dart';
+import 'package:quran_app/pages/quizz/hajj/hajj_quizz_page.dart';
+import 'package:quran_app/pages/quizz/praying/praying_quizz_page.dart';
+import 'package:quran_app/pages/quizz/prophets/prophets_quizz_page.dart';
+import 'package:quran_app/pages/quizz/ramadan/ramadan_quizz_page.dart';
 import 'package:quran_app/pages/quran_page.dart';
 import 'package:quran_app/pages/tasbih_page.dart';
+import 'package:quran_app/widgets/quiz_card.dart';
+import "../pages/quizz/qur'an/quran_quizz_page.dart";
 
-const route_categories = [
+const routeCategories = [
   {
     "id": 1,
     "name": "Qur'an",
@@ -56,7 +62,7 @@ const route_categories = [
     "id": 8,
     "name": "Savol\nva\njavob",
     "picture": "assets/icons/brain.png",
-    "route": QuranPage()
+    "route": QuizCard( )
 
   },
   {
@@ -65,5 +71,38 @@ const route_categories = [
     "picture": "assets/icons/books.png",
     "route": QuranPage()
 
+  },
+];
+
+const quizzCategories = [
+  {
+    "id": 1,
+    "name": "Prophets",
+    "picture": "assets/icons/quizz_prophets.png",
+    "route": ProphetsQuizPage()
+  },
+  {
+    "id": 2,
+    "name": "Qur'an",
+    "picture": "assets/icons/quiz_quran.jpg",
+    "route": QuranQuizPage()
+  },
+  {
+    "id": 3,
+    "name": "Ramadan",
+    "picture": "assets/icons/ramadan.jpg",
+    "route": RamadanQuizPage()
+  },
+  {
+    "id": 4,
+    "name": "Praying",
+    "picture": "assets/icons/quiz_mosque.jpg",
+    "route": PrayingQuizPage()
+  },
+  {
+    "id": 5,
+    "name": "Hajj",
+    "picture": "assets/icons/hajj.jpg",
+    "route": HajjQuizPage()
   },
 ];

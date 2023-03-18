@@ -7,7 +7,7 @@ class CardView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var categories = route_categories;
+    var categories = routeCategories;
     // print(MediaQuery.of(context).size.height);
     return Container(
         height: MediaQuery.of(context).size.height <= 670 ? 460: 470,

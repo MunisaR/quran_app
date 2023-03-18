@@ -12,8 +12,10 @@ class MainPage extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: SafeArea(
+
         child: Column(
           children: [
+            SizedBox(height: 20,),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
