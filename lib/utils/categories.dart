@@ -1,5 +1,7 @@
 import 'package:quran_app/pages/99_names.dart';
+import 'package:quran_app/pages/QiblaDirectionScreen.dart';
 import 'package:quran_app/pages/quran_page.dart';
+import 'package:quran_app/pages/rayingMainPage.dart';
 import 'package:quran_app/pages/tasbih_page.dart';
 import 'package:quran_app/pages/zikrs.dart';
 
@@ -28,7 +30,7 @@ const route_categories = [
     "id": 4,
     "name": "Qibla",
     "picture": "assets/icons/kaaba.png",
-    "route": QuranPage()
+    "route": TasbihPage()
 
   },
   {
@@ -42,7 +44,7 @@ const route_categories = [
     "id": 6,
     "name": "Namoz\no'qishni\no'rganamiz",
     "picture": "assets/icons/praying.png",
-    "route": QuranPage()
+    "route": PrayingMainPage()
 
   },
   ////
