@@ -65,6 +65,10 @@ class _TasbihPageState extends State<TasbihPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        shadowColor: Colors.transparent,
+      ),
       body: SafeArea(
         child: Container(
           width: MediaQuery.of(context).size.width,

@@ -1,4 +1,8 @@
 import 'package:quran_app/pages/99_names.dart';
+import 'package:quran_app/pages/quizz/hajj/hajj_quizz_page.dart';
+import 'package:quran_app/pages/quizz/praying/praying_quizz_page.dart';
+import 'package:quran_app/pages/quizz/prophets/prophets_quizz_page.dart';
+import 'package:quran_app/pages/quizz/ramadan/ramadan_quizz_page.dart';
 import 'package:quran_app/pages/quran_page.dart';
 import 'package:quran_app/pages/rayingMainPage.dart';
 import 'package:quran_app/pages/tasbih_page.dart';
