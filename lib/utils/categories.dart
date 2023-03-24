@@ -1,14 +1,15 @@
 import 'package:quran_app/pages/99_names.dart';
+import 'package:quran_app/pages/prayingMainPage.dart';
 import 'package:quran_app/pages/quizz/hajj/hajj_quizz_page.dart';
 import 'package:quran_app/pages/quizz/praying/praying_quizz_page.dart';
 import 'package:quran_app/pages/quizz/prophets/prophets_quizz_page.dart';
 import 'package:quran_app/pages/quizz/ramadan/ramadan_quizz_page.dart';
 import 'package:quran_app/pages/quran_page.dart';
-import 'package:quran_app/pages/rayingMainPage.dart';
 import 'package:quran_app/pages/tasbih_page.dart';
-import 'package:quran_app/widgets/quiz_card.dart';
-import "../pages/quizz/qur'an/quran_quizz_page.dart";
 import 'package:quran_app/pages/zikrs.dart';
+import 'package:quran_app/widgets/quiz_card.dart';
+
+import "../pages/quizz/qur'an/quran_quizz_page.dart";
 
 const routeCategories = [
   {
@@ -22,35 +23,30 @@ const routeCategories = [
     "name": "Namoz\nvaqtlari",
     "picture": "assets/icons/namoz.png",
     "route": QuranPage()
-
   },
   {
     "id": 3,
     "name": "Tasbeh",
     "picture": "assets/icons/tasbih.png",
     "route": TasbihPage()
-
   },
   {
     "id": 4,
     "name": "Qibla",
     "picture": "assets/icons/kaaba.png",
     "route": TasbihPage()
-
   },
   {
     "id": 5,
     "name": "Allohning\n99\nismlari",
     "picture": "assets/icons/99.png",
     "route": NamesOfAllah()
-
   },
   {
     "id": 6,
     "name": "Namoz\no'qishni\no'rganamiz",
     "picture": "assets/icons/praying.png",
     "route": PrayingMainPage()
-
   },
   ////
   {
@@ -58,21 +54,18 @@ const routeCategories = [
     "name": "Zikr\nva\nduolar",
     "picture": "assets/icons/zikr.png",
     "route": Zikrs()
-
   },
   {
     "id": 8,
     "name": "Savol\nva\njavob",
     "picture": "assets/icons/brain.png",
-    "route": QuizCard( )
-
+    "route": QuizCard()
   },
   {
     "id": 9,
     "name": "Kitoblar",
     "picture": "assets/icons/books.png",
     "route": QuranPage()
-
   },
 ];
 
