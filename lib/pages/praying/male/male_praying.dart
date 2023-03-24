@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/pages/praying/male/praying_steps.dart';
-import 'package:quran_app/pages/prayingMainPage.dart';
 
 import '../../../DRY/colors.dart';
 
@@ -15,27 +14,22 @@ class _MalePrayingState extends State<MalePraying> {
   int _stepIndex = 0;
 
   void nextStep() {
-    if (_stepIndex < prayingMale.length) {
-      setState(() {
-        _stepIndex++;
-      });
-    } else if (_stepIndex == prayingMale.length - 1){
-      setState(() {
-        _stepIndex = 0;
-      });
+    setState(() {
+      _stepIndex++;
+    });
+    if (_stepIndex >= prayingMale.length) {
+      _stepIndex = 0;
     }
   }
 
-  void backStep (){
+  void backStep() {
     setState(() {
       if (_stepIndex > 0) {
         _stepIndex--;
-      }
-      else if (_stepIndex == 0) {
+      } else if (_stepIndex == 0) {
         _stepIndex = 0;
       }
-    }
-    );
+    });
   }
 
   @override
