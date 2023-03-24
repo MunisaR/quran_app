@@ -1,11 +1,10 @@
 import 'dart:convert';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-
+import 'package:assets_audio_player/assets_audio_player.dart';
+late  int i;
 class SurahPage extends StatefulWidget {
   final int index;
 
@@ -19,9 +18,10 @@ class _SurahPageState extends State<SurahPage> {
   List surahList = [];
   List surahTranslate = [];
   late List sura;
-  String suraName='';
-  String englishaname='';
+  String suraName = '';
+  String englishaname = '';
   late List OneSurahTranslate;
+  var assetsAudioPlayer = AssetsAudioPlayer();
 
   Future res() async {
     final response = await rootBundle.loadString('./QuranAssets/quran.json');
@@ -39,12 +39,11 @@ class _SurahPageState extends State<SurahPage> {
             .where((element) => element['number'] == widget.index)
       ];
       sura = surahList[0].toList()[0]['ayahs'];
-      suraName =surahList[0].toList()[0]['name'];
-      englishaname =surahList[0].toList()[0]['englishName'];
+      suraName = surahList[0].toList()[0]['name'];
+      englishaname = surahList[0].toList()[0]['englishName'];
       OneSurahTranslate = surahTranslate[0].toList()[0]['ayahs'];
       if (kDebugMode) {
         print('surahList');
-
       }
     });
   }
@@ -52,8 +51,15 @@ class _SurahPageState extends State<SurahPage> {
   @override
   void initState() {
     // TODO: implement initState
+    i = widget.index;
     super.initState();
     res();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    assetsAudioPlayer.dispose();
   }
 
   @override
@@ -69,23 +75,25 @@ class _SurahPageState extends State<SurahPage> {
     }
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color(0xFF0081B4),
+      ),
       body: CustomScrollView(
         slivers: [
-          SliverAppBar(
-            title: Text('My App'),
-            expandedHeight: 100,
-            flexibleSpace: FlexibleSpaceBar(
-              // background: Image.asset(
-              //   'assets/icons/mosque.png',
-              //   fit: BoxFit.cover,
-              // ),
-            ),
+          const SliverAppBar(
+            backgroundColor: Colors.white,
+          ),
+          SliverPersistentHeader(
+            delegate: _MyBottomBarDelegate(),
+            pinned: true,
+            // floating: true,
           ),
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
                 return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 12),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8.0, vertical: 12),
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -101,25 +109,34 @@ class _SurahPageState extends State<SurahPage> {
                     ),
                     child: index == 0
                         ? Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Container(child: Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(englishaname, textAlign: TextAlign.center, style: TextStyle(fontSize: 25), ),
-                              ),
-                              // Text(surahList[0]['revelationType'], textAlign: TextAlign.center, style: TextStyle(fontSize: 25), ),
-                              // Text((surahList[0]['ayahs'].length-1).toString(), textAlign: TextAlign.center, style: TextStyle(fontSize: 25), ),
+                            padding: const EdgeInsets.all(15.0),
+                            child: Container(
+                                child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    englishaname,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(fontSize: 25),
+                                  ),
+                                ),
+                                // Text(surahList[0]['revelationType'], textAlign: TextAlign.center, style: TextStyle(fontSize: 25), ),
+                                // Text((surahList[0]['ayahs'].length-1).toString(), textAlign: TextAlign.center, style: TextStyle(fontSize: 25), ),
 
-                              Text("بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ الٓم", textAlign: TextAlign.center, style: TextStyle(fontSize: 25), ),
-                            ],
-                          )),
-                        )
+                                const Text(
+                                  "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ الٓم",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontSize: 25),
+                                ),
+                              ],
+                            )),
+                          )
                         : Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: ListTile(
+                            padding: const EdgeInsets.all(12.0),
+                            child: ListTile(
                               leading: index == 0
-                                  ? Text(
+                                  ? const Text(
                                       "",
                                       style: TextStyle(fontSize: 22),
                                     )
@@ -145,7 +162,8 @@ class _SurahPageState extends State<SurahPage> {
                                 padding: const EdgeInsets.all(10.0),
                                 child: Text(
                                   sura[index]['text'],
-                                  style: TextStyle(fontSize: index == 0 ? 24 : 22),
+                                  style:
+                                      TextStyle(fontSize: index == 0 ? 24 : 22),
                                   textAlign: index == 0
                                       ? TextAlign.center
                                       : TextAlign.right,
@@ -160,13 +178,12 @@ class _SurahPageState extends State<SurahPage> {
                                         ? ''
                                         : '${OneSurahTranslate[index]['text']}'),
                               ),
-
                               onTap: () {},
                               onLongPress: () {
                                 // Handle onLongPress event here
                               },
                             ),
-                        ),
+                          ),
                   ),
                 );
               },
@@ -176,5 +193,57 @@ class _SurahPageState extends State<SurahPage> {
         ],
       ),
     );
+  }
+}
+
+class _MyBottomBarDelegate extends SliverPersistentHeaderDelegate {
+  var assetsAudioPlayer = AssetsAudioPlayer();
+
+  @override
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return Container(
+      color: Colors.white,
+      // height: 50,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          // crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ElevatedButton(
+                onPressed: () {
+
+                  assetsAudioPlayer.open(
+                    Audio('assets/quran_audios/$i.m4a'),
+                  );
+                  assetsAudioPlayer.play();
+                },
+                child: const Icon(Icons.play_arrow)),
+            ElevatedButton(
+                onPressed: () {
+                  assetsAudioPlayer.pause();
+                },
+                child: const Icon(Icons.pause)),
+            ElevatedButton(
+                onPressed: () {
+                  assetsAudioPlayer.stop();
+                },
+                child: const Icon(Icons.stop)),
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  double get maxExtent => 50;
+
+  @override
+  double get minExtent => 50;
+
+  @override
+  bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
+    return false;
   }
 }
